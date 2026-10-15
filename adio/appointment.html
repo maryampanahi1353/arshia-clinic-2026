@@ -1,0 +1,158 @@
+```html
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>رزرو نوبت | مطب شنوایی‌شناسی عرشیا</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container nav-container">
+        <a href="index.html" class="logo">
+            <span class="logo-icon">◈</span>
+            <span>مطب شنوایی‌شناسی عرشیا</span>
+        </a>
+
+        <nav class="main-nav">
+            <a href="index.html">صفحه اصلی</a>
+            <a href="services.html">خدمات</a>
+            <a href="about.html">درباره ما</a>
+            <a href="contact.html">تماس با ما</a>
+            <a href="appointment.html" class="nav-cta">رزرو نوبت</a>
+        </nav>
+
+        <button class="menu-toggle"
+                aria-label="باز کردن منو"
+                aria-expanded="false">☰</button>
+    </div>
+</header>
+
+<main>
+    <section class="page-heading">
+        <div class="container">
+            <span class="eyebrow">رزرو آنلاین</span>
+            <h1>برای شنیدن بهتر، قدم اول را بردارید</h1>
+            <p>روز مراجعه را انتخاب کنید و ساعت مناسب خود را ببینید.</p>
+        </div>
+    </section>
+
+    <section class="booking-section">
+        <div class="container booking-layout">
+
+            <div class="booking-card">
+                <h2>درخواست نوبت</h2>
+                <p class="booking-description">
+                    اطلاعات زیر را وارد کنید. روزهای کاری مطب دوشنبه و چهارشنبه است.
+                </p>
+
+                <form id="appointment-form">
+                    <div class="form-group">
+                        <label for="patient-name">نام و نام خانوادگی</label>
+                        <input
+                            type="text"
+                            id="patient-name"
+                            name="patientName"
+                            placeholder="نام شما"
+                            autocomplete="name"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="patient-phone">شماره تماس</label>
+                        <input
+                            type="tel"
+                            id="patient-phone"
+                            name="patientPhone"
+                            placeholder="مثلاً 09123456789"
+                            autocomplete="tel"
+                            inputmode="tel"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="appointment-date">تاریخ مراجعه</label>
+                        <input
+                            type="date"
+                            id="appointment-date"
+                            name="appointmentDate"
+                            required>
+                        <small>فقط دوشنبه‌ها و چهارشنبه‌ها امکان مراجعه وجود دارد.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="appointment-time">ساعت نوبت</label>
+                        <select
+                            id="appointment-time"
+                            name="appointmentTime"
+                            required
+                            disabled>
+                            <option value="">ابتدا تاریخ را انتخاب کنید</option>
+                        </select>
+                    </div>
+
+                    <div id="booking-message" class="booking-message"
+                         role="status" aria-live="polite"></div>
+
+                    <button type="submit" class="btn btn-primary booking-submit">
+                        ثبت درخواست نوبت
+                    </button>
+                </form>
+
+                <p class="booking-note">
+                    توجه: در این نسخه، درخواست به‌صورت آزمایشی در همین مرورگر ثبت می‌شود
+                    و هنوز برای مطب ارسال نخواهد شد.
+                </p>
+            </div>
+
+            <aside class="booking-info">
+                <span class="info-icon">◷</span>
+                <h2>ساعات کاری مطب</h2>
+
+                <div class="schedule-row">
+                    <span>دوشنبه</span>
+                    <strong>۱۶ تا ۱۹</strong>
+                </div>
+
+                <div class="schedule-row">
+                    <span>چهارشنبه</span>
+                    <strong>۱۶ تا ۱۹</strong>
+                </div>
+
+                <div class="schedule-row">
+                    <span>مدت هر نوبت</span>
+                    <strong>۲۰ دقیقه</strong>
+                </div>
+
+                <div class="schedule-divider"></div>
+
+                <h3>نیاز به راهنمایی دارید؟</h3>
+                <p>برای هماهنگی می‌توانید با مطب تماس بگیرید.</p>
+
+                <a href="tel:09121991301" class="contact-phone">
+                    ۰۹۱۲۱۹۹۱۳۰۱
+                </a>
+
+                <a href="tel:88716163" class="contact-phone">
+                    ۸۸۷۱۶۱۶۳
+                </a>
+            </aside>
+
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-bottom">
+        <p>© مطب شنوایی‌شناسی عرشیا | مریم پناهی</p>
+    </div>
+</footer>
+
+</body>
+</html>
+```

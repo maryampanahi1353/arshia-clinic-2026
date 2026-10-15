@@ -1,0 +1,481 @@
+/* استایل کامل سایت مطب شنوایی‌شناسی عرشیا */
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --navy: #102d3a;
+  --navy-2: #153e49;
+  --teal: #1f6b70;
+  --teal-light: #eaf4f3;
+  --gold: #b99554;
+  --gold-light: #e4c58c;
+  --text: #203d45;
+  --muted: #687c82;
+  --line: #dce6e6;
+  --white: #fff;
+  --bg: #f7f9f8;
+  --shadow: 0 12px 35px rgba(16, 45, 58, 0.08);
+  --radius: 20px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Vazirmatn", Tahoma, sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.9;
+  direction: rtl;
+}
+img { max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+.container { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+
+/* نوار بالای سایت */
+.topbar {
+  background: var(--navy);
+  color: #eaf2f2;
+  font-size: .85rem;
+}
+.topbar-inner, .container.topbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-block: 7px;
+}
+.topbar span { color: #e4c58c; }
+
+/* سربرگ و منو */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,.96);
+  border-bottom: 1px solid rgba(220,230,230,.8);
+  backdrop-filter: blur(12px);
+}
+.header-inner, .nav-container {
+  min-height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.brand-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  background: var(--navy);
+  color: var(--gold-light);
+  font-size: 1.55rem;
+}
+.brand-copy { display: flex; flex-direction: column; line-height: 1.6; }
+.brand-copy strong { color: var(--navy); font-size: 1rem; }
+.brand-copy small { color: var(--muted); font-size: .78rem; }
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.main-nav a {
+  color: #38545b;
+  font-size: .92rem;
+  transition: color .2s ease;
+}
+.main-nav a:hover, .main-nav a.active { color: var(--teal); }
+.menu-toggle {
+  display: none;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--navy);
+  border-radius: 12px;
+  padding: 7px 12px;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+.nav-appointment, .nav-cta {
+  white-space: nowrap;
+}
+
+/* دکمه‌ها */
+.button, .btn, .nav-appointment, .nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 12px 21px;
+  background: var(--gold);
+  color: #fff;
+  font-weight: 700;
+  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+  cursor: pointer;
+}
+.button:hover, .btn:hover, .nav-appointment:hover, .nav-cta:hover {
+  transform: translateY(-2px);
+  background: #a78342;
+  box-shadow: 0 8px 20px rgba(185,149,84,.22);
+}
+.button-secondary {
+  background: transparent;
+  border-color: rgba(255,255,255,.55);
+  color: #fff;
+}
+.button-secondary:hover { background: rgba(255,255,255,.12); }
+
+/* صفحه اصلی و بخش معرفی */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(125deg, #102d3a 0%, #174b55 62%, #1f6b70 100%);
+  color: #fff;
+  padding: 78px 0 84px;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  left: -100px;
+  top: -150px;
+  border: 1px solid rgba(228,197,140,.22);
+  border-radius: 50%;
+  box-shadow: 0 0 0 35px rgba(228,197,140,.04), 0 0 0 75px rgba(228,197,140,.03);
+}
+.hero-inner, .hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+}
+.eyebrow, .section-eyebrow {
+  color: var(--gold);
+  font-weight: 700;
+  font-size: .9rem;
+  margin: 0 0 12px;
+}
+.hero .eyebrow { color: var(--gold-light); }
+.hero h1 {
+  margin: 0 0 20px;
+  max-width: 760px;
+  font-size: clamp(2rem, 4vw, 3.55rem);
+  line-height: 1.45;
+  color: #fff;
+}
+.hero p {
+  color: #d7e5e6;
+  max-width: 650px;
+  margin: 0 0 28px;
+}
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero-card, .hero-visual {
+  margin-top: 28px;
+  max-width: 520px;
+  padding: 22px;
+  border: 1px solid rgba(255,255,255,.17);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.07);
+}
+.hero-card strong { color: var(--gold-light); }
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  color: #d7e5e6;
+  font-size: .9rem;
+  margin-top: 28px;
+}
+
+/* بخش‌های عمومی */
+section { scroll-margin-top: 100px; }
+.section { padding: 76px 0; }
+.section-soft { background: var(--bg); }
+.section-heading {
+  max-width: 720px;
+  text-align: center;
+  margin: 0 auto 38px;
+}
+.section-heading h2, .section-title {
+  margin: 0 0 12px;
+  color: var(--navy);
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  line-height: 1.5;
+}
+.section-heading p { margin: 0; color: var(--muted); }
+h2, h3 { line-height: 1.55; }
+p { overflow-wrap: anywhere; }
+
+/* کارت خدمات */
+.services-grid, .service-grid, .cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+.service-card, .feature-card, .card {
+  padding: 27px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(16,45,58,.035);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.service-card:hover, .feature-card:hover, .card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+.service-icon, .feature-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: var(--teal-light);
+  color: var(--teal);
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+.service-card h3, .feature-card h3, .card h3 {
+  margin: 0 0 9px;
+  color: var(--navy);
+  font-size: 1.15rem;
+}
+.service-card p, .feature-card p, .card p { color: var(--muted); margin: 0 0 15px; }
+.text-link { color: var(--teal); font-weight: 700; }
+
+/* معرفی و مزایا */
+.about-grid, .two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 44px;
+}
+.about-panel {
+  padding: 32px;
+  border-radius: var(--radius);
+  background: var(--teal-light);
+}
+.about-panel h2, .about-grid h2, .two-column h2 { color: var(--navy); margin-top: 0; }
+.check-list { list-style: none; padding: 0; margin: 20px 0 0; }
+.check-list li { margin: 9px 0; }
+.check-list li::before { content: "✓"; color: var(--teal); font-weight: 800; margin-left: 10px; }
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 24px;
+}
+.stat-item { padding: 18px; border-radius: 14px; background: #fff; text-align: center; }
+.stat-item strong { display: block; color: var(--teal); font-size: 1.35rem; }
+.stat-item span { color: var(--muted); font-size: .86rem; }
+
+/* دعوت به رزرو */
+.appointment-banner, .cta-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 35px 40px;
+  border-radius: 24px;
+  background: var(--navy);
+  color: #fff;
+  margin-block: 35px;
+}
+.appointment-banner h2, .cta-banner h2 { color: #fff; margin: 0 0 8px; }
+.appointment-banner p, .cta-banner p { color: #d0dfe1; margin: 0; }
+
+/* تماس و پاورقی */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.contact-item {
+  padding: 23px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
+}
+.contact-item h3 { margin: 0 0 8px; color: var(--navy); }
+.contact-item p { color: var(--muted); margin: 0; }
+.site-footer {
+  margin-top: 50px;
+  background: #0b222c;
+  color: #d0dfe1;
+  padding: 42px 0 20px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 30px;
+}
+.site-footer h3, .site-footer strong { color: #fff; }
+.site-footer a { color: #d0dfe1; }
+.site-footer a:hover { color: var(--gold-light); }
+.footer-links { display: grid; gap: 7px; }
+.footer-bottom {
+  margin-top: 28px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,.12);
+  color: #9eb2b7;
+  font-size: .85rem;
+}
+
+/* صفحات داخلی */
+.page-heading {
+  padding: 60px 0 45px;
+  background: linear-gradient(125deg, #edf5f3, #f8faf9);
+  border-bottom: 1px solid var(--line);
+}
+.page-heading h1 { color: var(--navy); margin: 0 0 10px; font-size: clamp(1.8rem, 4vw, 2.7rem); }
+.page-heading p { max-width: 760px; color: var(--muted); margin: 0; }
+.breadcrumb { color: var(--muted); font-size: .85rem; margin-bottom: 12px; }
+.content-panel {
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(16,45,58,.035);
+}
+.content-panel h2, .content-panel h3 { color: var(--navy); }
+.content-panel p { color: var(--muted); }
+.article-content { max-width: 850px; margin-inline: auto; }
+.article-content h2 { color: var(--navy); margin-top: 32px; }
+.article-content p { color: #526970; }
+
+/* صفحه رزرو نوبت */
+.booking-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, .7fr);
+  gap: 28px;
+  align-items: start;
+  padding-block: 45px 70px;
+}
+.booking-card, .booking-info {
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 12px 35px rgba(16,45,58,.06);
+}
+.booking-card {
+  background: #fff;
+  border: 1px solid #e2ebeb;
+}
+.booking-card h2, .booking-info h2 {
+  margin-top: 0;
+  color: #153e49;
+}
+.booking-description {
+  color: #687c82;
+  line-height: 1.9;
+  margin-bottom: 25px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 20px;
+}
+.form-group label { font-weight: 600; color: #24434b; }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid #d5e1e2;
+  border-radius: 10px;
+  background: #fff;
+  color: #203d45;
+  font: inherit;
+  box-sizing: border-box;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  outline: 2px solid #b99554;
+  outline-offset: 2px;
+}
+.form-group small { color: #71858a; line-height: 1.8; }
+.booking-submit { width: 100%; margin-top: 10px; font: inherit; cursor: pointer; border: 0; }
+.booking-message { margin-top: 12px; line-height: 1.9; color: #176b55; }
+.booking-message.error { color: #a52c36; }
+.booking-note { margin-top: 20px; color: #78888c; font-size: .85rem; line-height: 1.9; }
+.booking-info { background: #102d3a; color: #fff; }
+.booking-info h2, .booking-info h3 { color: #fff; }
+.info-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.1);
+  color: #e4c58c;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+.schedule-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255,255,255,.13);
+}
+.schedule-row span, .booking-info p { color: #d0dfe1; line-height: 1.9; }
+.schedule-divider { height: 1px; margin: 25px 0; background: rgba(255,255,255,.18); }
+.contact-phone { display: block; color: #e4c58c; margin-top: 12px; direction: ltr; text-align: right; }
+
+/* ریسپانسیو */
+@media (max-width: 900px) {
+  .main-nav { gap: 13px; }
+  .main-nav a { font-size: .85rem; }
+  .services-grid, .service-grid, .cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .container { width: min(100% - 30px, 600px); }
+  .topbar-inner, .container.topbar-inner { justify-content: center; text-align: center; flex-wrap: wrap; }
+  .header-inner, .nav-container { min-height: 72px; }
+  .menu-toggle { display: inline-flex; align-items: center; justify-content: center; }
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    padding: 18px 22px 22px;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .main-nav.open { display: flex; }
+  .main-nav a { padding: 6px 0; font-size: .95rem; }
+  .nav-appointment, .nav-cta { display: none; }
+  .hero { padding: 55px 0 60px; }
+  .hero h1 { font-size: 2rem; }
+  .section { padding: 52px 0; }
+  .services-grid, .service-grid, .cards-grid, .contact-grid { grid-template-columns: 1fr; }
+  .about-grid, .two-column, .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+  .appointment-banner, .cta-banner { padding: 27px 22px; flex-direction: column; align-items: stretch; margin-block: 45px; }
+  .appointment-banner h2, .cta-banner h2 { font-size: 22px; }
+  .booking-layout { grid-template-columns: 1fr; }
+  .booking-card, .booking-info { padding: 22px; }
+  .page-heading { padding: 45px 0 35px; }
+  .stats-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 420px) {
+  .brand-icon { width: 42px; height: 42px; }
+  .brand-copy strong { font-size: .9rem; }
+  .brand-copy small { font-size: .72rem; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .button, .btn { width: 100%; }
+  .booking-card, .booking-info, .content-panel { padding: 18px; }
+}
